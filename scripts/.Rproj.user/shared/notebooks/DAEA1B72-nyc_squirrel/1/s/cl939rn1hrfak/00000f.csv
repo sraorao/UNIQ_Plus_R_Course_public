@@ -1,5 +1,0 @@
-"0","# reading data from file
-squirrel < read.csv(""../UNIQ_PLUS_R_course-main/2018_Central_Park_Squirrel_Census_-_Squirrel_Data.csv"")
-"
-"2","Error: object 'squirrel' not found
-"
