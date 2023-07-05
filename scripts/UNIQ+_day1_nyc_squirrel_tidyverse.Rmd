@@ -16,6 +16,8 @@ To install packages from CRAN:
 install.packages("tidyverse")
 library(tidyverse)
 ```
+
+
 ## Reading data from files
 The `read` family functions are useful for reading text-based data formats like csv (comma-separated value), tsv (tab-separated value) and txt.
 
@@ -25,7 +27,7 @@ squirrel <- read.csv("../datasets/nyc_squirrel_uniq_plus.csv")
 
 ```
 
-The data that is read is stored in the form of a `data.frame`, which is a way to represent tabular data in R.
+
 
 
 ## Subsetting a data.frame
@@ -42,7 +44,7 @@ squirrel %>%
 
 ## Filtering
 
-Keeping only tha part of the data that satisfy a specific condition (or a combination of conditions) is called filtering. Filtering in base R can be done using the subsetting notation `[ ]`.
+
 
 ```{r}
 squirrel %>%
@@ -51,7 +53,7 @@ squirrel %>%
 
 ## Summarising a data.frame
 
-The summary function is very helpful to find out the summary statistics of a data.frame column-by-column.
+
 
 ```{r}
 squirrel %>%
