@@ -18,10 +18,10 @@ my_data = c(3, 4, NA, 4, 5, NA, 1, NA, NA)
 
 # Test if there are NAs in our data
 is.na(my_data) # Gives us a logical vector
-which(is.na(my_data)) # gives us the location (indices) of these NAs
+which(is.na(my_data)) # gives us the location (indexes) of these NAs (TRUE)
 
 # However if we are testing a large vector
-sum(is.na(my_data)) # identify location of NA
+sum(is.na(my_data)) # identify number of NA
 table(is.na(my_data)) # counts number of NA
 
 # We can test a column of our hero dataset
@@ -44,8 +44,8 @@ table(is.na(data.frame))
 
 # Filter missing data
 na.omit(data.frame)
-na.exclude (data.frame)
 
+View(data.frame)
 ```
 
 # Recoding missing values
@@ -127,7 +127,7 @@ if (x > 3){
 
 
 if (y > 3){
-  print("x value is higher than 3")
+  print("y value is higher than 3")
 }
 
 
@@ -138,12 +138,24 @@ if (x > 3){
   print("x value is not higher than 3") 
 }
 
-
-# Chained conditionals
+sunny_countries = c("Spain", "Italy", "Greece", "Croatia")
 if ("Germany" %in% sunny_countries){
   print("That´s my next holiday destination!")
 } else {
   print("No way I´m going there this summer")
+}
+
+
+
+# Chained conditionals
+
+x = 0
+if (x > 0) {
+   print("Positive number")
+}else if (x < 0){
+   print("Negative number")
+} else {
+   print("Zero")
 }
 
 
@@ -157,9 +169,7 @@ if (temperature < 10) {
 }
 
 
-
-# ifelse()
-# Let's test what happens using if on a vector
+# Let's test what happens using if... else on a vector
 v = c(1:10)
 
 if(v == 3){
@@ -172,6 +182,7 @@ if(v == 3){
 # We can use ifelse()
 # syntax should be ifelse(condition, TrueBranch, FalseBranch)
 ifelse(v==3, "Value equals 3", "Value different than 3")
+
 
 # See one more example
 if (v %% 2 == 0) {
@@ -287,10 +298,20 @@ for (val in genes)
 }
 
 
+# for loops on lists
+my_list = list(c(1,2,4), c("high", "low", NA), c(23, NA, 67))
+
+for (val in my_list)
+{
+ print(is.na(val))
+}
+
+
 # while-loop
 x = 0
 
-while (x < 10){
+while (x < 10)
+{
   x = x + 1
   print (x)
 } 
@@ -299,12 +320,14 @@ while (x < 10){
 # Check the following while-loop. What´s wrong?
 b = 2
 
-while (b > 1){
+while (b > 1)
+{
   b = b + 1
   print ("This is an infinite loop")
 }
 
-# We can scape from this situation using by pressing Esc or clickin on STOP
+# We can scape from this situation using by pressing Esc or clicking STOP on the console
+
 
 # ADVANCED: if you want to have a look, break and next statements are used to terminate loops at a particular iteration or to skip a particular iteration.
 
