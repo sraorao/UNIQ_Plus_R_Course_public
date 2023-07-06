@@ -34,7 +34,7 @@ str(heroes)
 heroes$Publisher = as.factor(heroes$Publisher) # change Publisher variable to factor
 heroes$Gender = as.factor(heroes$Gender) # change Gender variable to factor
 levels(heroes$Gender)= c("Not Specified", "Female", "Male")# Define a new level as "Not Specified"
-summary(heroes$Gender)
+
 
 ```
 
@@ -58,7 +58,7 @@ plot(heroes$Publisher, las=2, cex.names=0.6, ylim= c(0,500)) # Increase y axis r
 plot(heroes$Publisher, las=2, cex.names=0.6, ylim= c(0,500), main = "Barplot of heroes by publisher") # add title
 
 
-# x, y graphs / scatterplots / correlation
+# XY graphs / scatterplots / correlation
 plot(heroes$Height, heroes$Weight) # Scatterplot of x and y values
 plot(heroes$Height, heroes$Weight, col="blue") #colour for every gender
 plot(heroes$Height, heroes$Weight, col=heroes$Gender) #colour for every gender
@@ -82,6 +82,10 @@ plot(heroes$Gender, heroes$Height, col=c("green","blue", "red")) #add colour
 plot(heroes$Gender, heroes$Height, col=c("green","blue", "red"), xlab = "Gender" ) #change x axis title
 
 # Save graphs
+pdf("Barplot_heroes.pdf")
+plot(heroes$Publisher, las=2, cex.names = 0.6, ylim= c(0,500), main = "Barplot of heroes by publisher") 
+dev.off()
+
 pdf("Barplot_heroes.pdf", width=15, height = 15)
 plot(heroes$Publisher, las=2, cex.names = 0.6, ylim= c(0,500), main = "Barplot of heroes by publisher") 
 dev.off()
@@ -89,7 +93,49 @@ dev.off()
 png("Hero_scatterplot.png")
 plot(heroes$Height, heroes$Weight, col=heroes$Gender, pch=24)
 dev.off()
+
+# More advanced information
+# Colours can be defined in different ways
+
+# specifing colour name (most common)
+boxplot(heroes$Height, col="blue") 
+# you can find all the names for colours that R offers using
+colors()
+
+# specifing hexadecimal color code 
+boxplot(heroes$Height, col="#FF00CC") 
+# https://htmlcolorcodes.com will allow you to pick a colour and get the code
+
+# using number 
+boxplot(heroes$Height, col=431) 
+
+# using rgb() function to build a color (red, green, blue)
+boxplot(heroes$Height, col=rgb(0.3, 0.7, 0.3))
 ```
+# Exercises
+
+```{r}
+# Plot a boxplot of the Weight by Alignment.
+
+
+```
+
+
+
+```{r}
+# Plot the frequency of every alignment in the dataset
+
+
+```
+
+
+```{r}
+# Colour the previous plot
+
+
+
+```
+
 
 
 ## ggplot2
@@ -166,8 +212,8 @@ ggplot(data = heroes, mapping = aes(Weight,Height))+
 	facet_grid(Gender~Alignment) # it can be split in two variable
 
 
-
 ```
+
 Let´s work now a bit on a different type of graph: boxplot
 
 ```{r}
