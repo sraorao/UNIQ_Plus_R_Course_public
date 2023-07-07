@@ -28,7 +28,7 @@ The second dataset will be used on the third day of the course and records the s
 
 ## Import data and make a few changes to better visualise the data later
 ```{r}
-heroes = read.csv("heroes_information.csv")
+heroes = read.csv("../datasets/heroes_information.csv")
 View(heroes)
 str(heroes)
 heroes$Publisher = as.factor(heroes$Publisher) # change Publisher variable to factor
